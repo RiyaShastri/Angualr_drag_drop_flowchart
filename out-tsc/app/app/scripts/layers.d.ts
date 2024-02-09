@@ -1,0 +1,30 @@
+import { SelectorViewModel } from './selector';
+import { LayerModel } from '@syncfusion/ej2-diagrams/src/diagram/diagram/layer-model';
+import { Dialog } from '@syncfusion/ej2-angular-popups';
+export declare class DiagramBuilderLayer {
+    private removeLayer;
+    selectedItem: SelectorViewModel;
+    layerDialog: Dialog;
+    private isEditing;
+    private layerCount1;
+    constructor(selectedItem: SelectorViewModel, layerDialog: Dialog);
+    private getLayers;
+    getLayerDialogContent(): void;
+    cloneLayerTemplate(layer: LayerModel, orderType: string, index: number): HTMLDivElement;
+    triggerEvents(): void;
+    renameLayerKeyDown(args: MouseEvent): void;
+    getLayerBottomPanel(): string;
+    initLayerBottomPanel(): void;
+    changeLayerSelection(args: MouseEvent): void;
+    changeLayerVisibility(args: MouseEvent): void;
+    changeLayerZorder(args: MouseEvent): void;
+    setActiveLayer(args: MouseEvent): void;
+    btnRenameLayer(args: MouseEvent): void;
+    renameLayer(args: MouseEvent): void;
+    btnRemoveLayer(args: MouseEvent): void;
+    btnCloseDialog(): void;
+    btnDuplicateLayer(): void;
+    btnAddLayer(): void;
+    getActiveLayer(layer: LayerModel): LayerModel;
+    findLayer(layerName: string): LayerModel;
+}
